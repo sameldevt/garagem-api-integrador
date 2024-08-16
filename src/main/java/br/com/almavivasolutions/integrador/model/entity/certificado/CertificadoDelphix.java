@@ -21,7 +21,7 @@ public class CertificadoDelphix implements Certificado{
 	private String note;
 	
 	@Override
-	public CertificadoDelphix build(String line) {
+	public CertificadoDelphix deserialize(String line) {
 		if(line.contains("\"")) {
   			line = line.replace("\"", "");
   		}

@@ -24,7 +24,7 @@ public class CertificadoGoogleCloud implements Certificado{
 	private String note;
 
 	@Override
-	public CertificadoGoogleCloud build(String line) {
+	public CertificadoGoogleCloud deserialize(String line) {
 		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
   		if(line.contains("\"")) {
   			line = line.replace("\"", "");

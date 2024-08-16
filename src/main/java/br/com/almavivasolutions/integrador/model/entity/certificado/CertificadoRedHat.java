@@ -26,7 +26,7 @@ public class CertificadoRedHat implements Certificado{
   	private String note;
   	
   	@Override
-  	public CertificadoRedHat build(String line) {
+  	public CertificadoRedHat deserialize(String line) {
   		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
   		if(line.contains("\"")) {
   			line = line.replace("\"", "");
@@ -38,6 +38,7 @@ public class CertificadoRedHat implements Certificado{
   		}
   		List<String> columns = CsvParser.lineToColumns(line);
   		
+  		System.out.println(columns.size() + " : " + columns);
   		certificationIndex = columns.get(0).trim();
   		certificationType = columns.get(1).trim();
   		accreditationName = columns.get(2).trim();

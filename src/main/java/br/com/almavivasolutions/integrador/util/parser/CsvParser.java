@@ -25,7 +25,6 @@ public class CsvParser {
     }
 
     public static List<String> lineToColumns(String line){
-    	String[] columns = line.split(separator);
         return List.of(line.split(separator));
     }
     

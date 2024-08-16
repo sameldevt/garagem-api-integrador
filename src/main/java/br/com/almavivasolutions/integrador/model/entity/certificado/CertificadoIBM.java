@@ -1,9 +1,12 @@
 package br.com.almavivasolutions.integrador.model.entity.certificado;
 
 import java.time.LocalDate;
+
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import br.com.almavivasolutions.integrador.util.parser.CsvParser;
 import br.com.almavivasolutions.integrador.util.parser.LocalDateParser;
@@ -28,15 +31,33 @@ public class CertificadoIBM implements Certificado{
 	private String note;
 
 	@Override
-	public CertificadoIBM build(String line) {
+	public CertificadoIBM deserialize(String line) {
   		if(line.contains("\"")) {
   			line = line.replace("\"", "");
   		}
   		
   		String[] lineSplit = line.split(",");
-  		if(lineSplit.length != 17) {
+  		if(lineSplit.length < 17) {
   	    	line = line + " ,";
+  	  		System.out.println("----------------------------------------------------");
+  	  		System.out.println(line);
+  	    	for(String s : lineSplit) {
+  	    		System.out.println(s);
+  	    	}
   		}
+
+//
+//  		String regex = "^([^,]*,){17}";
+//  		
+//        Pattern pattern = Pattern.compile(regex);
+//        Matcher matcher = pattern.matcher(line);
+//        
+//        if (matcher.matches()) {
+//            System.out.println(line);
+//        } else {
+//            return null;
+//        }
+//        
   		List<String> columns = CsvParser.lineToColumns(line);
   		
   		certificationIndex = columns.get(0).trim();
@@ -58,6 +79,27 @@ public class CertificadoIBM implements Certificado{
   		note = columns.get(16).trim();
   		
   		return this;
+	}
+	
+	private String checkSeparator(String line, int count) {
+		int innerCount = 0;
+		
+		for(int i = 0; i < line.length(); i++) {
+			if(line.charAt(i) == ',') {
+				innerCount++;
+			}
+		}
+		if(innerCount < count) {
+			StringBuilder stringBuilder = new StringBuilder(line);
+			while(innerCount <= count) {
+				stringBuilder.append(',');
+				innerCount++;
+			}
+			
+			return stringBuilder.toString();
+		}
+		
+		return line;
 	}
 	
 	@Override

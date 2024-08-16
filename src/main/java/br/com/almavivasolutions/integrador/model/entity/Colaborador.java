@@ -58,6 +58,9 @@ public class Colaborador {
 	public String getDepartamento() {
 		return departamento;
 	}
-
+	
+	public String getEmail() {
+		return email;
+	}
 
 }

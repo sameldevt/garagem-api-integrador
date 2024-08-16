@@ -22,7 +22,7 @@ public class CertificadoAWS implements Certificado{
 	private String note;
 
 	@Override
-	public CertificadoAWS build(String line) {
+	public CertificadoAWS deserialize(String line) {
   		if(line.contains("\"")) {
   			line = line.replace("\"", "");
   		}

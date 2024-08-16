@@ -15,8 +15,6 @@ import br.com.almavivasolutions.integrador.model.service.CertificadoService;
 @RestController
 @RequestMapping("/certificados/enviarArquivo")
 public class CertificadoController {
-	
-	private final String header = ",  ,Accreditation Name_New,Level,Programa,Function,Accreditation Holder: Full Name,Accreditation Holder: Email,Usuário Ativo,Credential Earned Date,Credential Expiration Date,Data Limite para Renovação,Observação";
 
 	@Autowired
 	private CertificadoService certificadoService;
@@ -27,6 +25,6 @@ public class CertificadoController {
 	        @RequestParam("fabricante") String fabricante) throws IOException{
 		
 	    certificadoService.inserirArquivo(file.getInputStream(), fabricante);
-	    return ResponseEntity.ok("Arquivo processado com sucesso!");
+	    return ResponseEntity.ok("Arquivo '" + fabricante + "' processado com sucesso!");
 	}
 }

@@ -21,7 +21,7 @@ public class CertificadoLiferay implements Certificado{
 	private String note;
 	
 	@Override
-	public CertificadoLiferay build(String line) {
+	public CertificadoLiferay deserialize(String line) {
 		if(line.contains("\"")) {
   			line = line.replace("\"", "");
   		}
