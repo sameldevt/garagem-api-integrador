@@ -18,18 +18,20 @@ public class GlobalExceptionHandler {
         		.status(status)
         		.contentType(MediaType.APPLICATION_JSON)
         		.body(errorResponse.toString());
-        //return new ResponseEntity<>(errorResponse, status);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<String> handleNotFoundException(ResourceNotFoundException ex) {
         return buildErrorResponse(HttpStatus.NOT_FOUND, ex.getMessage());
     }
-    
-//    @ExceptionHandler(ResourceNotFoundException.class)
-//    public ResponseEntity<String> handleNotFoundException(ResourceNotFoundException ex) {
-//        return ResponseEntity.status(HttpStatus.NOT_FOUND)
-//                .contentType(MediaType.APPLICATION_JSON)
-//                .body("{\"error\": \"Resource not found\"}");
-//    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex){
+        return buildErrorResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+
+    @ExceptionHandler(InvalidHeaderException.class)
+    public ResponseEntity<String> handleInvalidHeaderException(InvalidHeaderException ex){
+        return buildErrorResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
 }

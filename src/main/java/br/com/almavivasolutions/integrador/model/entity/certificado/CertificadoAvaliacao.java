@@ -258,4 +258,27 @@ public class CertificadoAvaliacao {
 		this.fabricante = fabricante;
 	}
 
+	@Override
+	public String toString() {
+		return "\nCertificadoAvaliacao{" +
+				"\nid=" + id +
+				", \nnome='" + nome + '\'' +
+				", \ntipoCertificado='" + tipoCertificado + '\'' +
+				", \ndataRealizacao=" + dataRealizacao +
+				", \ndataExpiracao=" + dataExpiracao +
+				", \nprazoValidade='" + prazoValidade + '\'' +
+				", \nidCertificadoFabricante='" + idCertificadoFabricante + '\'' +
+				", \nregiao='" + regiao + '\'' +
+				", \npartnerAccount='" + partnerAccount + '\'' +
+				", \nurlArquivo='" + urlArquivo + '\'' +
+				", \nvalido=" + valido +
+				", \npendente=" + pendente +
+				", \ncolaborador=" + colaborador +
+				", \nfabricante=" + fabricante +
+				", \nsubTipoCertificado='" + subTipoCertificado + '\'' +
+				", \ndataLimiteRenovacao=" + dataLimiteRenovacao +
+				", \nemail='" + email + '\'' +
+				", \nobservacao='" + observacao + '\'' +
+				'}';
+	}
 }

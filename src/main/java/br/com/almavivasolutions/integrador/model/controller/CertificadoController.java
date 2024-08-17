@@ -2,6 +2,7 @@ package br.com.almavivasolutions.integrador.model.controller;
 
 import java.io.IOException;
 
+import br.com.almavivasolutions.integrador.util.Report;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,8 +24,8 @@ public class CertificadoController {
 	public ResponseEntity<String> handleFileUpload(
 	        @RequestParam("file") MultipartFile file,
 	        @RequestParam("fabricante") String fabricante) throws IOException{
-		
-	    certificadoService.inserirArquivo(file.getInputStream(), fabricante);
-	    return ResponseEntity.ok("Arquivo '" + fabricante + "' processado com sucesso!");
+
+	    Report report = certificadoService.inserirUpload(file.getInputStream(), fabricante);
+	    return ResponseEntity.ok(report.toString());
 	}
 }
