@@ -6,7 +6,7 @@ import java.time.format.DateTimeParseException;
 import java.util.List;
 
 public class CertificadoGoogleCloud implements Certificado {
-    private final String header = ",Certification Number,Certification Name,Certification Type,Certification Sub-Type,Departament,Superior,First Name,Last Name,E-mail,Active in the company?,Certification Expiration Date,Data Limite para Renovação,Observação";
+    private final String header = ",Certification Number,Certification Name,Certification Type,Certification Sub-Type,Departament,Superior,First Name,Last Name,E-mail,Active in the company?,Certification Expiration Date,Data Limite para Renovação,Observação,,";
     private String certificationNumber;
     private String certificationName;
     private String certificationType;

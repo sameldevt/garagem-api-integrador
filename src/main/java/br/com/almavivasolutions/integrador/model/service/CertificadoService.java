@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,7 +37,7 @@ public class CertificadoService {
     public Report inserirUpload(InputStream uploadStream, String fabricante) {
         Report report = new Report();
         List<CertificadoAvaliacao> listaParaInserir = readUpload(uploadStream, fabricante, report);
-        //certificadoRepository.saveAll(listaParaInserir);
+        certificadoRepository.saveAll(listaParaInserir);
         report.endRequest();
         return report;
     }
@@ -45,19 +46,22 @@ public class CertificadoService {
         List<CertificadoAvaliacao> listaParaInserir = new ArrayList<>();
         Map<String, Colaborador> colaboradores = colaboradorService.buscarTodos();
         Fabricante fabricanteObjeto = fabricanteService.buscar(fabricante);
+
         int certificateCount = 0;
         try (CSVReader reader = new CSVReader(new InputStreamReader(uploadStream))) {
             String[] header = reader.readNext();
             Certificado certificado = CertificadoFactory.get(fabricante);
-
             checkUpload(certificado, header);
-
             String[] line;
             while ((line = reader.readNext()) != null) {
+                certificateCount++;
                 String emailColaborador = "";
                 String nomeCertificado = "";
 
-                CertificadoAvaliacao certificadoAvaliacao = certificado.deserialize(List.of(line))
+                line = String.join(",", line).replace("\n", "").concat(" ,").split(",");
+
+                CertificadoAvaliacao certificadoAvaliacao = certificado
+                        .deserialize(List.of(line))
                         .toCertificadoAvaliacao();
                 try {
                     emailColaborador = certificadoAvaliacao.getEmail();
@@ -66,9 +70,13 @@ public class CertificadoService {
                     if (colaborador == null) {
                         throw new NullPointerException();
                     }
+                    if(colaborador.getEmail().isBlank()){
+                        throw new NullPointerException();
+                    }
                     certificadoAvaliacao.setColaborador(colaborador);
                     certificadoAvaliacao.setFabricante(fabricanteObjeto);
                     listaParaInserir.add(certificadoAvaliacao);
+
                     report.incrementCertificatesInserted();
                 } catch (NullPointerException e) {
                     report.addCollaboratorNotFound(emailColaborador);
@@ -76,7 +84,6 @@ public class CertificadoService {
                 }
             }
 
-            certificateCount = (int) reader.getLinesRead() - 1;
         } catch (IOException | CsvValidationException e) {
             throw new RuntimeException(e);
         }
