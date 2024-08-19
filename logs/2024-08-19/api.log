@@ -1,0 +1,109 @@
+2024-08-19 11:24:36 INFO  b.c.a.i.utils.logger.ApiLogger - Requisição POST para /certificados/enviarArquivo
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Novo relatório iniciado.
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - 1125 colaboradores encontrados.
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Fabricante Delphix encontrado.
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Processando arquivo de upload...
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Verificando compatibilidade entre arquivo e fabricante...
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 1
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 1
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 1
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 2
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 3
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 4
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 5
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 2
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 2
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 6
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 7
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 8
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 3
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 3
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 9
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 10
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 11
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 12
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 13
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 14
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 15
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 16
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 17
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 4
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 4
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 5
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 5
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 6
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 6
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 7
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 7
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 8
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 8
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 9
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 9
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 10
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 10
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 11
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 11
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 12
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 12
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 18
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 13
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 13
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 14
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 14
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 15
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 15
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 16
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 16
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 19
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 17
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 17
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 18
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 18
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de colaboradores não encontrados alterado para 19
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados não inseridos alterado para 19
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 20
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 21
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados inseridos alterado para 22
+2024-08-19 11:24:36 DEBUG b.c.a.i.utils.logger.ApiLogger - Total de certificados alterado para 41
+2024-08-19 11:24:37 DEBUG b.c.a.i.utils.logger.ApiLogger - Relatório finalizado.
+2024-08-19 11:24:37 DEBUG b.c.a.i.utils.logger.ApiLogger - Tempo da Requisição: 512 ms
+Total de Certificados: 41
+Certificados Inseridos: 22 (53.66%)
+Certificados Não Inseridos: 19 (46.34%)
+Colaboradores Não Encontrados: 19 (46.34%)
+Lista de Certificados Não Inseridos: 
+{
+      Badges Pre-Sales(Trilha): badge azul Pre-sales
+      Badges Pre-Sales(Trilha): badge verde
+      Badges Pre-Sales(Trilha): badge amarelo
+      Badge Pre sales Engineer:badge verde
+      Badges Vendas:  badge azul
+      Badge Pre sales Engineer:badge azul
+      Badge azul: Data Masking Services
+      Badge Pre sales Engineer:badge verde
+      Badges Vendas:  badge azul
+      Badge Pre sales Engineer:badge azul
+      Badge Pre sales Engineer:badge verde
+      Badge Pre sales Engineer:badge amarelo
+      Badge Pre sales Engineer:badge verde
+      Badges Vendas:  badge azul
+      Badge Pre sales Engineer:badge azul
+      Badge azul: Data Masking Services
+      Badge Pre sales Engineer:badge azul
+      Badge Pre sales Engineer:badge verde
+      Badge Pre sales Engineer:badge amarelo
+}
+Lista de Colaboradores Não Encontrados: 
+{
+      lfquevedo@magnasistemas.com.br
+      gamorim@magnasistemas.com.br
+      ruineto@magnasistemas.com.br
+      kmmendonca@magnasistemas.com.br
+}
+2024-08-19 11:26:02 INFO  b.c.a.i.utils.logger.ApiLogger - Requisição POST para /certificados/enviarArquivo
+2024-08-19 11:26:02 DEBUG b.c.a.i.utils.logger.ApiLogger - Novo relatório iniciado.
+2024-08-19 11:26:02 DEBUG b.c.a.i.utils.logger.ApiLogger - 1125 colaboradores encontrados.
+2024-08-19 11:26:02 DEBUG b.c.a.i.utils.logger.ApiLogger - Fabricante IBM encontrado.
+2024-08-19 11:26:02 DEBUG b.c.a.i.utils.logger.ApiLogger - Processando arquivo de upload...
+2024-08-19 11:26:02 DEBUG b.c.a.i.utils.logger.ApiLogger - Verificando compatibilidade entre arquivo e fabricante...
+2024-08-19 11:26:02 ERROR b.c.a.i.utils.logger.ApiLogger - FABRICANTE E ARQUIVO INCOMPATÍVEIS.

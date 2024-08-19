@@ -1,4 +1,4 @@
-package br.com.almavivasolutions.integrador.util;
+package br.com.almavivasolutions.integrador.utils;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import br.com.almavivasolutions.integrador.utils.logger.ApiLogger;
 
 public class Report {
     private final Instant requestStartTime;
@@ -25,28 +27,35 @@ public class Report {
         this.collaboratorsNotFound = 0;
         this.certificatesNotInsertedList = new ArrayList<>();
         this.collaboratorsNotFoundList = new HashSet<>();
+        ApiLogger.logRequestDetails("Novo relatório iniciado.");
     }
 
     public void endRequest() {
         this.requestEndTime = Instant.now();
+        ApiLogger.logRequestDetails("Relatório finalizado.");
+        ApiLogger.logRequestDetails(this.toString());
     }
 
     public void setTotalCertificates(int totalCertificates) {
         this.totalCertificates = totalCertificates;
+        ApiLogger.logRequestDetails("Total de certificados alterado para " + totalCertificates);
     }
 
     public void incrementCertificatesInserted() {
         this.certificatesInserted++;
+        ApiLogger.logRequestDetails("Total de certificados inseridos alterado para " + certificatesInserted);
     }
 
     public void addCertificateNotInserted(String certificate) {
         this.certificatesNotInserted++;
         this.certificatesNotInsertedList.add(certificate);
+        ApiLogger.logRequestDetails("Total de certificados não inseridos alterado para " + certificatesNotInserted);
     }
 
     public void addCollaboratorNotFound(String collaborator) {
         this.collaboratorsNotFound++;
         this.collaboratorsNotFoundList.add(collaborator);
+        ApiLogger.logRequestDetails("Total de colaboradores não encontrados alterado para " + collaboratorsNotFound);
     }
 
     private Duration getRequestDuration() {

@@ -1,10 +1,14 @@
 package br.com.almavivasolutions.integrador.model.exception;
 
+import java.sql.SQLException;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import br.com.almavivasolutions.integrador.utils.logger.ApiLogger;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -14,6 +18,7 @@ public class GlobalExceptionHandler {
                 message,
                 System.currentTimeMillis()
         );
+        ApiLogger.logRequestError(message);
         return ResponseEntity
         		.status(status)
         		.contentType(MediaType.APPLICATION_JSON)
@@ -33,5 +38,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(InvalidHeaderException.class)
     public ResponseEntity<String> handleInvalidHeaderException(InvalidHeaderException ex){
         return buildErrorResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
+    }
+    
+    @ExceptionHandler(SQLException.class)
+    public ResponseEntity<String> handleSQLException(SQLException ex){
+    	return buildErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Erro interno.");
     }
 }

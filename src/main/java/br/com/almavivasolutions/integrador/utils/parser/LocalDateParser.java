@@ -1,4 +1,4 @@
-package br.com.almavivasolutions.integrador.util.parser;
+package br.com.almavivasolutions.integrador.utils.parser;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

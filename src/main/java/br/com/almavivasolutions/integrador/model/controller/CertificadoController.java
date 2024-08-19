@@ -2,7 +2,6 @@ package br.com.almavivasolutions.integrador.model.controller;
 
 import java.io.IOException;
 
-import br.com.almavivasolutions.integrador.util.Report;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import br.com.almavivasolutions.integrador.model.service.CertificadoService;
+import br.com.almavivasolutions.integrador.utils.Report;
+import br.com.almavivasolutions.integrador.utils.logger.ApiLogger;
 
 @RestController
 @RequestMapping("/certificados/enviarArquivo")
@@ -24,8 +25,9 @@ public class CertificadoController {
 	public ResponseEntity<String> handleFileUpload(
 	        @RequestParam("file") MultipartFile file,
 	        @RequestParam("fabricante") String fabricante) throws IOException{
+		ApiLogger.logRequest("Requisição POST para /certificados/enviarArquivo");
 
-	    Report report = certificadoService.inserirUpload(file.getInputStream(), fabricante);
+	    Report report = certificadoService.insertUpload(file.getInputStream(), fabricante);
 	    return ResponseEntity.ok(report.toString());
 	}
 }

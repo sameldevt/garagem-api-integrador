@@ -1,9 +1,9 @@
 package br.com.almavivasolutions.integrador.model.entity.certificado;
 
-import br.com.almavivasolutions.integrador.util.parser.LocalDateParser;
-
 import java.time.format.DateTimeParseException;
 import java.util.List;
+
+import br.com.almavivasolutions.integrador.utils.parser.LocalDateParser;
 
 public class CertificadoRedHat implements Certificado {
     private final String header = ",  ,Accreditation Name_New,Level,Programa,Specialization,Function,Departament,Superior,Accreditation Holder: Full Name,Accreditation Holder: Email,Usuário Ativo,Credential Earned Date,Credential Expiration Date,Data Limite para Renovação,Observação";

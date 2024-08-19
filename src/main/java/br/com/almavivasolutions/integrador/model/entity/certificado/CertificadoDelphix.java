@@ -1,9 +1,9 @@
 package br.com.almavivasolutions.integrador.model.entity.certificado;
 
-import br.com.almavivasolutions.integrador.util.parser.LocalDateParser;
-
 import java.time.format.DateTimeParseException;
 import java.util.List;
+
+import br.com.almavivasolutions.integrador.utils.parser.LocalDateParser;
 
 public class CertificadoDelphix implements Certificado {
     private final String header = ",Certificação / Badge,Departament,Superior,Nome,Email Address,Active,Credential Earned Date,Credential Expiration Date,Data Limite para Renovação,Observação";

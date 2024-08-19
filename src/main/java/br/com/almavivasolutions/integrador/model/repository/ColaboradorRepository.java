@@ -9,7 +9,7 @@ import br.com.almavivasolutions.integrador.model.entity.Colaborador;
 
 @Repository
 public interface ColaboradorRepository extends JpaRepository<Colaborador, Long>{
-	@Query(value = "SELECT * FROM tb_colaborador tc WHERE tc.email = :email LIMIT 1", 	nativeQuery = true)
+	@Query(value = "SELECT DISTINCT * FROM tb_colaborador tc WHERE tc.email = :email", 	nativeQuery = true)
 	Colaborador findByEmail(@Param(value = "email") String email);
 
 }

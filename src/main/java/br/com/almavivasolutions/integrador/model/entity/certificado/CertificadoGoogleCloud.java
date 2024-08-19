@@ -1,9 +1,9 @@
 package br.com.almavivasolutions.integrador.model.entity.certificado;
 
-import br.com.almavivasolutions.integrador.util.parser.LocalDateParser;
-
 import java.time.format.DateTimeParseException;
 import java.util.List;
+
+import br.com.almavivasolutions.integrador.utils.parser.LocalDateParser;
 
 public class CertificadoGoogleCloud implements Certificado {
     private final String header = ",Certification Number,Certification Name,Certification Type,Certification Sub-Type,Departament,Superior,First Name,Last Name,E-mail,Active in the company?,Certification Expiration Date,Data Limite para Renovação,Observação,,";

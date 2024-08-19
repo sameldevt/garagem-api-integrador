@@ -1,9 +1,9 @@
 package br.com.almavivasolutions.integrador.model.entity.certificado;
 
-import br.com.almavivasolutions.integrador.util.parser.LocalDateParser;
-
 import java.time.format.DateTimeParseException;
 import java.util.List;
+
+import br.com.almavivasolutions.integrador.utils.parser.LocalDateParser;
 
 public class CertificadoIBM implements Certificado {
     private final String header = ",Credential Type,Solution,Badge Name,Sales/Technical,First Name,Last Name,Email Address,Active in the company?,Departament,Superior,IBM ID,End User Unique ID,Credential Earned Date,Credential Expiration Date,Data Limite para Renovação,Observação";
