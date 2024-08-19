@@ -13,7 +13,7 @@ import br.com.almavivasolutions.integrador.utils.logger.ApiLogger;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     private ResponseEntity<String> buildErrorResponse(HttpStatus status, String message) {
-        ErrorResponse errorResponse = new ErrorResponse(
+        HttpResponse errorResponse = new HttpResponse(
                 status.value(),
                 message,
                 System.currentTimeMillis()

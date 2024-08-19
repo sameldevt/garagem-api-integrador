@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### DIRS ###
+certificacoes/
+front-end-test/
+logs/
