@@ -6,4 +6,5 @@ public interface Certificado {
 	Certificado deserialize(List<String> info);
 	CertificadoAvaliacao toCertificadoAvaliacao();
 	String getHeader();
+	String getCollaboratorName();
 }

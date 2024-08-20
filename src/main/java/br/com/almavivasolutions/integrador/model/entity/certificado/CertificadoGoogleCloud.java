@@ -11,6 +11,7 @@ public class CertificadoGoogleCloud implements Certificado {
     private String certificationName;
     private String certificationType;
     private String certificationSubType;
+    private String collaboratorName;
     private String collaboratorEmailAddress;
     private String expirationDate;
     private String renewalLimitDate;
@@ -22,6 +23,9 @@ public class CertificadoGoogleCloud implements Certificado {
         certificationName = columns.get(2).trim();
         certificationType = columns.get(3).trim();
         certificationSubType = columns.get(4).trim();
+        String collaboratorFirstName = columns.get(7).trim();
+        String collaboratorLastName = columns.get(8).trim();
+        collaboratorName = collaboratorFirstName + " " + collaboratorLastName;
         collaboratorEmailAddress = columns.get(9).trim();
         expirationDate = columns.get(11).trim();
         renewalLimitDate = columns.get(12).trim();
@@ -68,4 +72,9 @@ public class CertificadoGoogleCloud implements Certificado {
                 ", note='" + note + '\'' +
                 '}';
     }
+
+	@Override
+	public String getCollaboratorName() {
+		return collaboratorName;
+	}
 }

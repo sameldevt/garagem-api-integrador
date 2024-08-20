@@ -9,6 +9,7 @@ public class CertificadoAWS implements Certificado {
     private final String header = "Certificação / Badge,Validation Number,Departament,Superior,Nome,Email Address,Active,Credential Earned Date,Credential Expiration Date,Data Limite para Renovação,Observação";
     private String certificationOrBadgeName;
     private String validationNumber;
+    private String collaboratorName;
     private String collaboratorEmailAddress;
     private String credentialEarnedDate;
     private String credentialExpirationDate;
@@ -19,6 +20,7 @@ public class CertificadoAWS implements Certificado {
     public CertificadoAWS deserialize(List<String> columns) {
         certificationOrBadgeName = columns.get(0).trim();
         validationNumber = columns.get(1).trim();
+        collaboratorName = columns.get(4).trim();
         collaboratorEmailAddress = columns.get(5).trim();
         credentialEarnedDate = columns.get(7).trim();
         credentialExpirationDate = columns.get(8).trim();
@@ -64,4 +66,9 @@ public class CertificadoAWS implements Certificado {
                 ", note='" + note + '\'' +
                 '}';
     }
+
+	@Override
+	public String getCollaboratorName() {
+		return collaboratorName;
+	}
 }

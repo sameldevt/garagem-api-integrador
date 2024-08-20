@@ -32,6 +32,9 @@ build/
 ### VS Code ###
 .vscode/
 
+### dotenv ###
+.env
+
 ### DIRS ###
 certificacoes/
 front-end-test/

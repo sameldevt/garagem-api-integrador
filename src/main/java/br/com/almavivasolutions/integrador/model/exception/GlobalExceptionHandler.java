@@ -13,7 +13,7 @@ import br.com.almavivasolutions.integrador.utils.logger.ApiLogger;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     private ResponseEntity<String> buildErrorResponse(HttpStatus status, String message) {
-        HttpResponse errorResponse = new HttpResponse(
+        HttpResponseMessage errorResponse = new HttpResponseMessage(
                 status.value(),
                 message,
                 System.currentTimeMillis()
@@ -40,8 +40,8 @@ public class GlobalExceptionHandler {
         return buildErrorResponse(HttpStatus.BAD_REQUEST, ex.getMessage());
     }
     
-    @ExceptionHandler(SQLException.class)
-    public ResponseEntity<String> handleSQLException(SQLException ex){
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> handleException(Exception ex){
     	return buildErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Erro interno.");
     }
 }

@@ -38,18 +38,15 @@
 	      <groupId>org.springframework.boot</groupId>
 	      <artifactId>spring-boot-starter-validation</artifactId>
 	    </dependency>
-
 		<dependency>
 	      <groupId>org.springframework.boot</groupId>
 	      <artifactId>spring-boot-starter-data-jpa</artifactId>
 	    </dependency>
-	
 	    <dependency>
 	      <groupId>org.postgresql</groupId>
 	      <artifactId>postgresql</artifactId>
 	      <scope>runtime</scope>
 	    </dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -71,7 +68,21 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>2.0.13</version>
 		</dependency>
-
+		<dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.cdimascio</groupId>
+            <artifactId>java-dotenv</artifactId>
+            <version>5.2.2</version>
+        </dependency>
+		<dependency>
+		    <groupId>com.itextpdf</groupId>
+		    <artifactId>itextpdf</artifactId>
+		    <version>5.5.13.4</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -7,14 +7,15 @@ import br.com.almavivasolutions.integrador.model.entity.certificado.CertificadoA
 import br.com.almavivasolutions.integrador.model.entity.certificado.CertificadoFactory;
 import br.com.almavivasolutions.integrador.model.exception.InvalidHeaderException;
 import br.com.almavivasolutions.integrador.model.repository.CertificadoRepository;
-import br.com.almavivasolutions.integrador.utils.Report;
 import br.com.almavivasolutions.integrador.utils.logger.ApiLogger;
+import br.com.almavivasolutions.integrador.utils.report.Report;
 
 import com.opencsv.CSVParser;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.FileSystemUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -56,10 +57,11 @@ public class CertificadoService {
     }
 
     private void readUpload(InputStream uploadStream, String fabricante, Report report) {
+    	report.setNomeFabricante(fabricante);
         Fabricante fabricanteObject = fabricanteService.buscar(fabricante);
         ApiLogger.logRequestDetails("Processando arquivo de upload...");
         int certificateCount = 0;
-        
+
         try (CSVReader reader = new CSVReader(new InputStreamReader(uploadStream))) {
             String[] uploadHeader = reader.readNext();
             Certificado certificado = CertificadoFactory.get(fabricante);
@@ -68,11 +70,13 @@ public class CertificadoService {
             String[] line;
             while ((line = reader.readNext()) != null) {
                 certificateCount++;
-                line = cleanLine(line);
+                //line = cleanLine(line);
                 CertificadoAvaliacao certificadoAvaliacao = certificado
                         .deserialize(List.of(line))
                         .toCertificadoAvaliacao();
-                completeCertificadoAvaliacaoConstruction(certificadoAvaliacao, fabricanteObject);
+                
+                String nomeColaborador = certificado.getCollaboratorName();
+                completeCertificadoAvaliacaoConstruction(certificadoAvaliacao, fabricanteObject, nomeColaborador);
             }
 
         } catch (IOException | CsvValidationException e) {
@@ -101,15 +105,15 @@ public class CertificadoService {
     	if (colaborador == null) {
             throw new NullPointerException();
         }
-    	if(colaborador.getEmail().isBlank()){
-            throw new NullPointerException();
-        }
+    	if(colaborador.getEmail().isBlank()) {
+    		throw new NullPointerException();
+    	}
     }
     
     private void completeCertificadoAvaliacaoConstruction(
     		CertificadoAvaliacao certificadoAvaliacao, 
-    		Fabricante fabricante) {
-    	
+    		Fabricante fabricante,
+    		String nomeColaborador) {
     	String emailColaborador = "";
     	String nomeCertificado = "";
     	
@@ -121,11 +125,9 @@ public class CertificadoService {
             certificadoAvaliacao.setColaborador(colaborador);
             certificadoAvaliacao.setFabricante(fabricante);
             listaParaInserir.add(certificadoAvaliacao);
-
             report.incrementCertificatesInserted();
         } catch (NullPointerException e) {
-            report.addCollaboratorNotFound(emailColaborador);
-            report.addCertificateNotInserted(nomeCertificado);
+        	report.addToCertificateNotInsertedList(nomeCertificado, emailColaborador, nomeColaborador);
         }
     }
 }

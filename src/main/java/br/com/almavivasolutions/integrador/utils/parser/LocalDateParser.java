@@ -1,6 +1,7 @@
 package br.com.almavivasolutions.integrador.utils.parser;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
@@ -14,5 +15,4 @@ public class LocalDateParser {
 		DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		return LocalDate.parse(date, dateFormatter);
 	}
-
 }

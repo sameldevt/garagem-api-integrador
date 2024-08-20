@@ -9,6 +9,7 @@ public class CertificadoLiferay implements Certificado {
     private final String header = ",Certificação,Tecnologia,Departament,Superior,Nome,Email Address,Active,Data Realizada,Data de expiração,Data Limite para Renovação,Observação";
     private String certification;
     private String technology;
+    private String collaboratorName;
     private String collaboratorEmailAddress;
     private String credentialEarnedDate;
     private String credentialExpirationDate;
@@ -19,6 +20,9 @@ public class CertificadoLiferay implements Certificado {
     public CertificadoLiferay deserialize(List<String> columns) {
         certification = columns.get(1).trim();
         technology = columns.get(2).trim();
+        String collaboratorFirstName = columns.get(4).trim();
+        String collaboratorLastName = columns.get(5).trim();
+        collaboratorName = collaboratorFirstName + " " + collaboratorLastName;
         collaboratorEmailAddress = columns.get(6).trim();
         credentialEarnedDate = columns.get(8).trim();
         credentialExpirationDate = columns.get(9).trim();
@@ -64,4 +68,9 @@ public class CertificadoLiferay implements Certificado {
                 ", note='" + note + '\'' +
                 '}';
     }
+
+	@Override
+	public String getCollaboratorName() {
+		return collaboratorName;
+	}
 }

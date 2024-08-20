@@ -13,6 +13,7 @@ public class CertificadoRedHat implements Certificado {
     private String program;
     private String specialization;
     private String function;
+    private String accreditationHolderFullName;
     private String accreditationHolderEmail;
     private String credentialEarnedDate;
     private String credentialExpirationDate;
@@ -27,6 +28,7 @@ public class CertificadoRedHat implements Certificado {
         program = columns.get(4).trim();
         specialization = columns.get(5).trim();
         function = columns.get(6).trim();
+        accreditationHolderFullName = columns.get(9).trim();
         accreditationHolderEmail = columns.get(10).trim();
         credentialEarnedDate = columns.get(12).trim();
         credentialExpirationDate = columns.get(13).trim();
@@ -78,4 +80,9 @@ public class CertificadoRedHat implements Certificado {
                 ", note='" + note + '\'' +
                 '}';
     }
+
+	@Override
+	public String getCollaboratorName() {
+		return accreditationHolderFullName;
+	}
 }

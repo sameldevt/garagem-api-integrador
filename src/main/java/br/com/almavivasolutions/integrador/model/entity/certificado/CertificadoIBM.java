@@ -11,6 +11,7 @@ public class CertificadoIBM implements Certificado {
     private String solution;
     private String badgeName;
     private String salesOrTechnical;
+    private String collaboratorName;
     private String collaboratorEmailAddress;
     private String credentialEarnedDate;
     private String credentialExpirationDate;
@@ -23,6 +24,9 @@ public class CertificadoIBM implements Certificado {
         solution = columns.get(2).trim();
         badgeName = columns.get(3).trim();
         salesOrTechnical = columns.get(4).trim();
+        String collaboratorFirstName = columns.get(5).trim();
+        String collaboratorLastName = columns.get(6).trim();
+        collaboratorName = collaboratorFirstName + " " + collaboratorLastName;
         collaboratorEmailAddress = columns.get(7).trim();
         credentialEarnedDate = columns.get(13).trim();
         credentialExpirationDate = columns.get(14).trim();
@@ -72,4 +76,9 @@ public class CertificadoIBM implements Certificado {
                 ", note='" + note + '\'' +
                 '}';
     }
+
+	@Override
+	public String getCollaboratorName() {
+		return collaboratorName;
+	}
 }
